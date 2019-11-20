@@ -1,0 +1,48 @@
+BLINKI^1        BLINKING LIGHTS TEST                                                                          PAGE 1
+
+                       1    
+                       2    $MOD51
+                       3    
+                       4    $TITLE(BLINKING LIGHTS TEST)
+                       5    
+                       6    
+                       7    
+0000                   8    Reset:
+0000 90001C            9            MOV DPTR,#SINDATA 
+0003 7800             10            MOV R0,#00H
+                      11    
+0005                  12    MAINLOOP:
+0005 E8               13            MOV  A,R0
+0006 93               14            MOVC A,@A+DPTR 
+0007 F5A0             15            MOV  P2,A
+0009 120015           16            LCALL Delay1ms
+                      17                    
+000C 08               18            INC R0
+000D B80AF5           19            CJNE R0,#10,MAINLOOP
+                      20            
+0010 7800             21            MOV  R0,#0
+0012 020005           22            LJMP MAINLOOP    
+                      23      
+0015                  24    Delay1ms:
+                      25              
+0015 79FA             26              MOV R1,#250
+0017 00               27       LOOP1: NOP
+0018 00               28              NOP
+0019 D9FC             29              DJNZ R1,LOOP1
+001B 22               30              RET
+                      31    
+001C FFE6A658         32    SINDATA:  DB 0FFH,0E6H,0A6H,58H,18H,00H,18H,58H,0A6H,0E6H
+0020 18001858   
+0024 A6E6       
+                      33    
+                      34    END
+
+VERSION 1.2k ASSEMBLY COMPLETE, 0 ERRORS FOUND
+BLINKI^1        BLINKING LIGHTS TEST                                                                          PAGE 2
+
+DELAY1MS . . . . . . . . . . . .  C ADDR  0015H  
+LOOP1. . . . . . . . . . . . . .  C ADDR  0017H  
+MAINLOOP . . . . . . . . . . . .  C ADDR  0005H  
+P2 . . . . . . . . . . . . . . .  D ADDR  00A0H  PREDEFINED  
+RESET. . . . . . . . . . . . . .  C ADDR  0000H  NOT USED  
+SINDATA. . . . . . . . . . . . .  C ADDR  001CH  

@@ -1,0 +1,18 @@
+clear all;
+fs = 100000;
+t= 0 : 1/fs : 0.004;
+f1  = 1000;
+f2  = 20000;
+x1 = cos(2*pi*f1*t);
+x2 = cos(2*pi*f2*t);
+x = x1 + x2;
+subplot(4,1,1);
+plot(x1);
+subplot(4,1,2);
+plot(x2);
+subplot(4,1,3);
+plot(x);
+Hd = lowfilter;
+y = filter(Hd,x);
+subplot(4,1,4);
+plot(y);

@@ -1,0 +1,98 @@
+BLINKI^1        BLINKING LIGHTS TEST                                                                          PAGE 1
+
+                       1    
+                       2    $MOD51
+                       3    
+                       4    $TITLE(BLINKING LIGHTS TEST)
+                       5    
+                       6    
+0000                   7            ORG 0000H
+0000 02000E            8    RESET:  LJMP MAIN
+                       9    
+000B                  10            ORG 000BH
+000B 02002E           11            LJMP T0_ISR
+                      12    
+000E                  13     MAIN:
+000E 85FF8C           14            MOV TH0,0FFH
+0011 85048A           15            MOV TL0,04H
+0014 851189           16            MOV TMOD,11H
+0017 7530FF           17            MOV 30H,#255
+                      18          
+                      19           
+001A A830             20            MOV R0,30H
+                      21            
+001C AA00             22            MOV  R2,00H
+001E 900056           23            MOV  DPTR,#SINDATA
+0021 E8               24            MOV  A,R0
+0022 93               25            MOVC A,@A+DPTR
+0023 F9               26            MOV  R1,A
+                      27     
+0024 D2AF             28            SETB EA
+0026 D2A9             29            SETB ET0
+                      30            
+0028 D28C             31            SETB TR0
+002A D290             32            SETB P1.0
+                      33           
+                      34           
+002C                  35    MAINLOOP:
+002C 012C             36             AJMP MAINLOOP
+                      37    
+002E                  38    T0_ISR:
+002E C2AF             39            CLR EA
+0030 758CFF           40            MOV TH0,#0FFH
+0033 758A04           41            MOV TL0,#04H
+0036 E9               42            MOV A,R1
+0037 7004             43            JNZ  NEXT1
+0039 C290             44            CLR  P1.0
+003B 013E             45            AJMP NEXT2
+003D 19               46    NEXT1:  DEC  R1
+003E E8               47    NEXT2:  MOV A,R0
+003F 7011             48            JNZ  NEXT3
+0041 D290             49            SETB P1.0
+0043 0A               50            INC  R2
+0044 EA               51            MOV  A,R2
+0045 B41404           52            CJNE A,#20,NEXT5
+0048 7400             53            MOV  A,#00H
+004A 7A00             54            MOV  R2,#00H
+004C                  55    NEXT5:
+004C 93               56            MOVC A,@A+DPTR
+004D F9               57            MOV  R1,A
+004E A830             58            MOV  R0,30H
+BLINKI^1        BLINKING LIGHTS TEST                                                                          PAGE 2
+
+0050 0153             59            AJMP NEXT4   
+0052                  60    NEXT3:        
+0052 18               61            DEC R0
+0053                  62    NEXT4:  
+0053 D2AF             63            SETB EA
+0055 32               64            RETI
+0056 FFF8E6CA         65    SINDATA:DB 0FFH,0F8H,0E6H,0CAH,0A6H,7FH,58H,34H,18H,06H,00H
+005A A67F5834   
+005E 180600     
+0061 06183458         66            DB 06H,18H,34H,58H,7FH,0A6H,0CAH,0E6H,0F8H
+0065 7FA6CAE6   
+0069 F8         
+                      67    
+                      68    
+                      69           END
+
+VERSION 1.2k ASSEMBLY COMPLETE, 0 ERRORS FOUND
+BLINKI^1        BLINKING LIGHTS TEST                                                                          PAGE 3
+
+EA . . . . . . . . . . . . . . .  B ADDR  00AFH  PREDEFINED  
+ET0. . . . . . . . . . . . . . .  B ADDR  00A9H  PREDEFINED  
+MAIN . . . . . . . . . . . . . .  C ADDR  000EH  
+MAINLOOP . . . . . . . . . . . .  C ADDR  002CH  
+NEXT1. . . . . . . . . . . . . .  C ADDR  003DH  
+NEXT2. . . . . . . . . . . . . .  C ADDR  003EH  
+NEXT3. . . . . . . . . . . . . .  C ADDR  0052H  
+NEXT4. . . . . . . . . . . . . .  C ADDR  0053H  
+NEXT5. . . . . . . . . . . . . .  C ADDR  004CH  
+P1 . . . . . . . . . . . . . . .  D ADDR  0090H  PREDEFINED  
+RESET. . . . . . . . . . . . . .  C ADDR  0000H  NOT USED  
+SINDATA. . . . . . . . . . . . .  C ADDR  0056H  
+T0_ISR . . . . . . . . . . . . .  C ADDR  002EH  
+TH0. . . . . . . . . . . . . . .  D ADDR  008CH  PREDEFINED  
+TL0. . . . . . . . . . . . . . .  D ADDR  008AH  PREDEFINED  
+TMOD . . . . . . . . . . . . . .  D ADDR  0089H  PREDEFINED  
+TR0. . . . . . . . . . . . . . .  B ADDR  008CH  PREDEFINED  

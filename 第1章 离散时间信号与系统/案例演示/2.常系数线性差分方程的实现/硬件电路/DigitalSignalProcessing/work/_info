@@ -1,0 +1,36 @@
+m255
+K3
+13
+cModel Technology
+dC:\modeltech_6.5\examples
+vDSP
+VOCT9kXZ>JaS6=hboLhUl[3
+r1
+!s85 0
+31
+I@cilcT`lO:zSjP@DWX>^=0
+Z0 dL:\DigitalSignalProcessing
+w1441702596
+8L:/DigitalSignalProcessing/design.v
+FL:/DigitalSignalProcessing/design.v
+L0 1
+Z1 OE;L;6.5;42
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -L mtiAvm -L mtiOvm -L mtiUPF
+n@d@s@p
+!s100 G6Me7`?2KfDzHP]h;l2;81
+vtestbench
+VhGfW:390DM[oDMzegDH9`2
+r1
+31
+IZZOXonEHDmH<J3ohLB9j42
+Z4 dL:\DigitalSignalProcessing
+w1441702726
+8L:/DigitalSignalProcessing/testbench.v
+FL:/DigitalSignalProcessing/testbench.v
+L0 2
+R1
+R2
+R3
+!s85 0
+!s100 ElTX@@9UgFM]JKdTH_m<Z1

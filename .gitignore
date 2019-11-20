@@ -1,0 +1,17 @@
+**/Debug/
+**/build/
+**/Release/
+**/.vs*/
+**/Backup/
+**/*.dsw
+**/*.dsp
+**/*.ncb
+**/*.opt
+**/*.plg
+**/*.dep
+**/*.vcxproj
+**/*.user
+**/*.filters
+**/Thumbs.db
+**/UpgradeLog.htm
+Review/

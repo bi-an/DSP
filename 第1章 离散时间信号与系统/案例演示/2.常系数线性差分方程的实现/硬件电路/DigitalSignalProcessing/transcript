@@ -1,0 +1,32 @@
+# Reading C:/modeltech_6.5/tcl/vsim/pref.tcl 
+# error: Load_NoDesignLayout can't read "map(Y)": no such element in array
+# can't read "map(Y)": no such element in array
+#     while executing
+# "subst -nocommands $string"
+#     (procedure "encode" line 11)
+#     invoked from within
+# "encode $ukey"
+#     (procedure "getMTIProperty" line 11)
+#     invoked from within
+# "getMTIProperty $geomKey main_size "" "
+#     (procedure "LoadLayout" line 26)
+#     invoked from within
+# "LoadLayout NoDesign quitsim"
+#     ("eval" body line 1)
+#     invoked from within
+# "eval "LoadLayout $new_layout_name quitsim""
+#     (procedure "Layout::Load_NoDesignLayout" line 3)
+#     invoked from within
+# "Layout::Load_NoDesignLayout" 
+# //  ModelSim SE 6.5 Jan 22 2009 
+# //
+# //  Copyright 1991-2009 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# OpenFile {G:/Yf/iáoåfb/pWá÷/,1à »cöôá÷ûß/H‹:/2.8ûp¿'î¹„ž°/lö5ï/DigitalSignalProcessing/testbench.v} 
+quit
