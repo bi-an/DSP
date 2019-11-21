@@ -5,6 +5,7 @@
 FFTW库
 https://www.cnblogs.com/aiguona/p/9407425.html
 http://www.fftw.org/
+Windows使用fftw：https://blog.csdn.net/grafx/article/details/38750107
 
 先试着实现BP自聚焦：
 fft, 特征值, 奇异值分解
