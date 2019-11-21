@@ -3,6 +3,8 @@
 暂时没有提交《复习》。
 
 FFTW库
+https://www.cnblogs.com/aiguona/p/9407425.html
+http://www.fftw.org/
 
 先试着实现BP自聚焦：
 fft, 特征值, 奇异值分解
